@@ -1,0 +1,35 @@
+--- Environment ---
+
+.venv/
+venv/
+env/
+bin/
+lib/
+share/
+Include/
+
+--- Python Caches ---
+
+pycache/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+--- Jupyter Notebooks ---
+
+.ipynb_checkpoints/
+
+--- Data (CRITICAL: Do not track large datasets) ---
+
+data/external/
+data/raw/
+data/processed/*.csv
+
+--- Model Artifacts ---
+
+We usually only track the final exported .onnx in the web-app folder
+
+*.pkl
+*.joblib
+*.model

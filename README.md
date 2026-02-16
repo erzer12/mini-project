@@ -33,3 +33,4 @@ The "Kitchen". A Python environment for data collection, processing, and model t
    pip install opencv-python mediapipe scikit-learn numpy matplotlib
    python src/collect.py
    ```
+   
