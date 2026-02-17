@@ -1,9 +1,21 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import SignStream from "@/components/camera/SignStream";
+import dynamic from "next/dynamic";
 import { PredictionDisplay } from "@/components/feedback/PredictionDisplay";
 import { ControlPanel } from "@/components/controls/ControlPanel";
+
+const SignStream = dynamic(
+	() => import("@/components/camera/SignStream"),
+	{
+		ssr: false,
+		loading: () => (
+			<div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl flex items-center justify-center text-white">
+				Loading AI Models...
+			</div>
+		),
+	},
+);
 
 export default function Home() {
 	const [currentResult, setCurrentResult] = useState<string>("");
